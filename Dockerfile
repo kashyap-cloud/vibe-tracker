@@ -20,6 +20,7 @@ ENV VITE_AUTH_API_URL=$VITE_AUTH_API_URL
 RUN npm run build
 
 
+# Nginx stage - rebuilt for 301 fix
 FROM nginx:alpine
 
 WORKDIR /usr/share/nginx/html
