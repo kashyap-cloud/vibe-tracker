@@ -50,14 +50,18 @@ const Index = () => {
   };
 
   const handleExit = () => {
-    window.parent.postMessage({ type: "navigate", route: "exit" }, "*");
+    if (window.parent !== window) {
+      window.parent.postMessage({ action: 'exit' }, 'https://web.mantracare.com');
+    } else {
+      window.location.href = 'https://web.mantracare.com';
+    }
   };
 
   return (
     <div className="min-h-screen bg-background max-w-md mx-auto relative pt-16">
       <button
         onClick={handleExit}
-        className="absolute top-4 left-4 p-2 rounded-full hover:bg-accent transition-colors group"
+        className="absolute top-4 left-4 p-2 rounded-full hover:bg-accent transition-colors group z-50"
         aria-label="Exit"
       >
         <svg
