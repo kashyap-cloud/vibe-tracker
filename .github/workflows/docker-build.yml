@@ -29,7 +29,7 @@ jobs:
           context: .
           push: true
           platforms: linux/amd64
-          tags: bunker.mantracare.com/lovable/vibe_tracker:1.0
+          tags: bunker.mantracare.com/lovable/vibe_tracker:1.1
           build-args: |
             VITE_NEON_API_KEY=${{ secrets.VITE_NEON_API_KEY }}
             VITE_NEON_PROJECT_ID=${{ secrets.VITE_NEON_PROJECT_ID }}
