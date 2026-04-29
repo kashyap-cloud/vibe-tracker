@@ -58,19 +58,16 @@ export const AuthGuard: React.FC<AuthGuardProps> = ({ children }) => {
 
                             setIsAuthorized(true);
                         } else {
-                            window.location.href = "/token";
-                        }
-                    } else {
-                        window.location.href = "/token";
+                        window.location.href = "/vibe_tracker/token";
                     }
                 } catch (error) {
                     console.error("AuthGuard Exception:", error);
-                    window.location.href = "/token";
+                    window.location.href = "/vibe_tracker/token";
                 } finally {
                     setIsLoading(false);
                 }
             } else {
-                window.location.href = "/token";
+                window.location.href = "/vibe_tracker/token";
             }
         };
 

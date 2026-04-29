@@ -49,8 +49,32 @@ const Index = () => {
     transition("checkin");
   };
 
+  const handleExit = () => {
+    window.parent.postMessage({ type: "navigate", route: "exit" }, "*");
+  };
+
   return (
     <div className="min-h-screen bg-background max-w-md mx-auto relative pt-16">
+      <button
+        onClick={handleExit}
+        className="absolute top-4 left-4 p-2 rounded-full hover:bg-accent transition-colors group"
+        aria-label="Exit"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="text-muted-foreground group-hover:text-foreground"
+        >
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+      </button>
       <LanguageSelector />
       <div
         className={`transition-all duration-500 ease-in-out ${transitioning ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
